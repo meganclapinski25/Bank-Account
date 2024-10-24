@@ -1,10 +1,10 @@
 import random
 
 class BankAccount:
-    def __init__(self, full_name):
+    def __init__(self, full_name, account_number = None):
         self.full_name = full_name
         self.balance = 0
-        self.account_number = self.random_num()
+        self.account_number = account_number if account_number else self.random_num()
     def random_num(self):
         return random.randint(10000000,99999999)
     
@@ -27,10 +27,11 @@ class BankAccount:
     def print_statment(self):
         print(f"Account Owner: {self.full_name}")
         print(f"Account Number: {self.account_number}")
-        print(f"Initial Balance: ${self.balance}")
+        print(f" Balance: ${self.balance}")
         
         
         
+print("---------First Example-----------")
 account1 = BankAccount("Megan Clapinski")
 account1.deposit(500)  
 account1.withdraw(250)
@@ -38,11 +39,9 @@ account1.withdraw(250)
 account1.get_balance()
 account1.add_interest()
 account1.print_statment()
-
+print("---------Second Example--------")
 account2 = BankAccount("Katie Jones")
 account2.print_statment()
 account2.deposit(1000)
 account2.add_interest()
-account2.get_balance()
-account2.withdraw(100)
-account2.get_balance()
+account2.get_bal
