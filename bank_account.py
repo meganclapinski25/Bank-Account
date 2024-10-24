@@ -24,22 +24,25 @@ class BankAccount:
         self.balance -=interest
         print(f"Your current balanace with interest is : ${self.balance:.2f}")    
         
+    def print_statment(self):
+        print(f"Account Owner: {self.full_name}")
+        print(f"Account Number: {self.account_number}")
+        print(f"Initial Balance: ${self.balance}")
         
         
         
 account1 = BankAccount("Megan Clapinski")
-print(f"Account Owner: {account1.full_name}")
-print(f"Account Number: {account1.account_number}")
-print(f"Initial Balance: ${account1.balance}")
-
-
 account1.deposit(500)  
-
-
 account1.withdraw(250)
 
-##Balace should be 500 -  250 = 250 
-
-##print(f"Updated Balance: ${account1.balance}")
 account1.get_balance()
 account1.add_interest()
+account1.print_statment()
+
+account2 = BankAccount("Katie Jones")
+account2.print_statment()
+account2.deposit(1000)
+account2.add_interest()
+account2.get_balance()
+account2.withdraw(100)
+account2.get_balance()
