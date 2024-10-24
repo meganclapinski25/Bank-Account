@@ -12,6 +12,9 @@ class BankAccount:
         self.balance += amount 
         return ("Amount deposited: + ${amount} + new balance: + ${self.balance}" )
     
+    def withdraw(self, amount):
+        self.balance -= amount
+        return ("Amount withdrew: + ${amount} + New Balance: + ${self.balance}")
     
 account1 = BankAccount("Megan Clapinski")
 print(f"Account Owner: {account1.full_name}")
@@ -21,5 +24,11 @@ print(f"Initial Balance: ${account1.balance}")
 
 account1.deposit(500)  
 
+
+print(f"Updated Balance: ${account1.balance}")
+
+account1.withdraw(250)
+
+##Balace should be 500 -  250 = 250 
 
 print(f"Updated Balance: ${account1.balance}")
