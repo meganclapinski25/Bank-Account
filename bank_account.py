@@ -18,7 +18,11 @@ class BankAccount:
     
     def get_balance(self):
         print(f"Your current balance is : ${self.balance:.2f}")
-        
+    
+    def add_interest(self):
+        interest = self.balance * 0.0083
+        self.balance -=interest
+        print(f"Your current balanace with interest is : ${self.balance:.2f}")    
         
         
         
@@ -38,3 +42,4 @@ account1.withdraw(250)
 
 ##print(f"Updated Balance: ${account1.balance}")
 account1.get_balance()
+account1.add_interest()
