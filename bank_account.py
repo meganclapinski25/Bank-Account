@@ -1,7 +1,5 @@
 import random
 
-
-
 class BankAccount:
     def __init__(self, full_name, account_number = None): #Global to class 
         self.full_name = full_name
@@ -28,7 +26,7 @@ class BankAccount:
     # Add Interest to balance (interest = balance * 8.3% )
     def add_interest(self):
         interest = self.balance * 0.0083
-        self.balance -=interest
+        self.balance +=interest
         print(f"Your current balanace with interest is : ${self.balance:.2f}")    
     # Print statment with blurred account number 
     def print_statment(self):
